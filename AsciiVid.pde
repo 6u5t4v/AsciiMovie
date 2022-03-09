@@ -11,13 +11,13 @@ final String[] DENSITY_LIST= new String[]{
 // --------------[INDSTILLINER]--------------
 
 // VALUES: 0, 1, 2, 3, 4.
-final int DENSITY_INDEX = 4;
+final int DENSITY_INDEX = 2;
 // Video settings
 final String VIDEO_FILE_NAME = "operator.MOV";
-final String OUTPUT_FOLDER = "output";
+final String OUTPUT_FOLDER = "out";
 final int VIDEO_X_RESOLUTION = 1920;
 final int VIDEO_Y_RESOLUTION = 1080;
-final int RECORDING_FPS = 5;
+final int RECORDING_FPS = 20;
 
 final boolean IS_FLIPPED = false;
 
@@ -27,7 +27,7 @@ final int TEXT_COLOR_G = 255;
 final int TEXT_COLOR_B = 0;
 
 final boolean INVERT_COLORS = false;
-final int SCALE = 5;
+final int SCALE = 10;
 
 boolean recording = true;
 
@@ -50,7 +50,7 @@ void setup() {
 
   clip.frameRate(RECORDING_FPS);
 
-  PFont mono = createFont("Courier", SCALE + 8, true);
+  PFont mono = createFont("Courier", SCALE + 2, true);
   textFont(mono);
 
   noStroke();
@@ -58,9 +58,7 @@ void setup() {
 }
 
 void draw() {
-
   println(frameRate);
-  //if (clip.available()) clip.read();
 
   background(0);
   clip.loadPixels();
@@ -83,8 +81,7 @@ void draw() {
     }
   }
 
-  saveFrame(OUTPUT_FOLDER + "/frame-#####.png");
-  //set(0, 0, clip);
+  saveFrame("output/" + OUTPUT_FOLDER + "/frame-#####.png");
 }
 
 int getCharIndex(float b) {
