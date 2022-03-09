@@ -13,10 +13,13 @@ final String[] DENSITY_LIST= new String[]{
 // VALUES: 0, 1, 2, 3, 4.
 final int DENSITY_INDEX = 4;
 // Video settings
-final String VIDEO_FILE_NAME = "test2.mp4";
-final String OUTPUT_FOLDER = "density4";
-final int VIDEO_X_RESOLUTION = 1280;
-final int VIDEO_Y_RESOLUTION = 720;
+final String VIDEO_FILE_NAME = "operator.MOV";
+final String OUTPUT_FOLDER = "output";
+final int VIDEO_X_RESOLUTION = 1920;
+final int VIDEO_Y_RESOLUTION = 1080;
+final int RECORDING_FPS = 5;
+
+final boolean IS_FLIPPED = false;
 
 // VALUES 0 to 255. Brug google's color picker
 final int TEXT_COLOR_R = 0;
@@ -45,9 +48,9 @@ void setup() {
   clip.volume(0);
   clip.read();
 
-  clip.frameRate(15);
+  clip.frameRate(RECORDING_FPS);
 
-  PFont mono = createFont("Courier", SCALE + 2, true);
+  PFont mono = createFont("Courier", SCALE + 8, true);
   textFont(mono);
 
   noStroke();
@@ -55,17 +58,21 @@ void setup() {
 }
 
 void draw() {
+
   println(frameRate);
   //if (clip.available()) clip.read();
 
   background(0);
-
-  //clip.read();
   clip.loadPixels();
 
-  for (int y = 0; y < clip.height; y += SCALE) {
-    for (int x = 0; x < clip.width; x += SCALE) {
-      final color pixel = clip.get(x, y);
+  PImage frame = clip;
+  if (IS_FLIPPED) {
+    frame = getFlippedFrame(frame);
+  }
+
+  for (int y = 0; y < frame.height; y += SCALE) {
+    for (int x = 0; x < frame.width; x += SCALE) {
+      final color pixel = frame.get(x, y);
       final float brightness = brightness(pixel);
 
       final int charIndex = getCharIndex(brightness);
@@ -77,6 +84,7 @@ void draw() {
   }
 
   saveFrame(OUTPUT_FOLDER + "/frame-#####.png");
+  //set(0, 0, clip);
 }
 
 int getCharIndex(float b) {
@@ -88,4 +96,14 @@ int getCharIndex(float b) {
 
 void movieEvent(Movie m) {
   m.read();
+}
+
+PImage getFlippedFrame(PImage frame) {
+  PImage reverse = new PImage( frame.width, frame.height );
+  for ( int i=0; i < frame.width; i++ ) {
+    for (int j=0; j < frame.height; j++) {
+      reverse.set( i, frame.height - 1 - j, frame.get(i, j) );
+    }
+  }
+  return reverse;
 }
