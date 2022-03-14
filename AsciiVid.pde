@@ -8,20 +8,25 @@ final String[] DENSITY_LIST= new String[]{
   "MN@#$o;:,. ", // 4
 };
 
-// --------------[INDSTILLINER]--------------
+// --------------[SETTINGS]--------------
 
 // VALUES: 0, 1, 2, 3, 4.
 final int DENSITY_INDEX = 2;
 // Video settings
-final String VIDEO_FILE_NAME = "operator.MOV";
+final String VIDEO_FILE_NAME = "clip.mp4";
 final String OUTPUT_FOLDER = "out";
 final int VIDEO_X_RESOLUTION = 1920;
 final int VIDEO_Y_RESOLUTION = 1080;
-final int RECORDING_FPS = 20;
 
+final int RECORDING_FPS = 6;
+final int FONT_SIZE = 8;
+
+// For some reason some clips are flip vertically,
+// this option is too prevent that, just set it to
+// 'true' if the clip appears flipped.
 final boolean IS_FLIPPED = false;
 
-// VALUES 0 to 255. Brug google's color picker
+// VALUES 0 to 255. Use google's color picker
 final int TEXT_COLOR_R = 0;
 final int TEXT_COLOR_G = 255;
 final int TEXT_COLOR_B = 0;
@@ -31,7 +36,7 @@ final int SCALE = 10;
 
 boolean recording = true;
 
-// ------------[INDSTILLINER SLUT]------------
+// ------------[END OF SETTINGS]------------
 
 final String DENSITY = DENSITY_LIST[DENSITY_INDEX];
 final int len = DENSITY.length() - 1;
@@ -50,7 +55,7 @@ void setup() {
 
   clip.frameRate(RECORDING_FPS);
 
-  PFont mono = createFont("Courier", SCALE + 2, true);
+  PFont mono = createFont("Courier", SCALE + FONT_SIZE, true);
   textFont(mono);
 
   noStroke();
