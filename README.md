@@ -28,7 +28,7 @@ After the video has rendered, all frames should located in `output/frames`.
 Set `DENSITY_INDEX` to either `0, 1, 2, 3, 4` to which is the different sets of characters the program will use.
 
 ### Change font color
-You can change each color component red, green and blue seperate using `TEXT_COLOR_R` `TEXT_COLOR_G` `TEXT_COLOR_B`. The values must be between 0-255.
+You can change each color component red, green and blue seperate using `TEXT_COLOR_R` `TEXT_COLOR_G` `TEXT_COLOR_B`. The values must be between 0-255, you can use https://htmlcolors.com/google-color-picker, where you just have to pick a color and use the rgb(r,g,b) value from the websites gives you, as the values for the font color.
 
 ### Testing
 While testing your settings, I would recommend setting `recording` to `false`,  
