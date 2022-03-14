@@ -8,11 +8,11 @@ Now we need a library made by Processing. This library is nessacary to read vide
 ![image](https://user-images.githubusercontent.com/41763143/158257737-64670bc4-9676-40ab-ac1b-12b02166e1c6.png)
 
 ### Running the program
-2. Put a video clip into the `data` folder
-3. Change `VIDEO_FILE_NAME` to the name of the clip
-4. Change `VIDEO_X_RESOLUTION` and `VIDEO_Y_RESOLUTION` 
+1. Put a video clip into the `data` folder
+2. Change `VIDEO_FILE_NAME` to the name of the clip
+3. Change `VIDEO_X_RESOLUTION` and `VIDEO_Y_RESOLUTION` 
 to the resolution of the clip.
-5. Run the program
+4. Run the program
 
 ### Generate a video
 After the video has rendered, all frames should located in `output/frames`.
