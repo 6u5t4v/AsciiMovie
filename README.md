@@ -17,9 +17,9 @@ to the resolution of the clip.
 4. Run the program
 
 ### Generate a video
-After the video has rendered, all frames should located in `output/frames`.
-1. Open the built-in movie maker in processing, by going `Tools > Movie Maker`.
-2. Select the ouput folder where the frames are located where it asks
+After the video has rendered, all frames should ne located in `output/frames`.
+1. Open the built-in processing's movie maker, by going to `Tools > Movie Maker`.
+3. Select the ouput folder where the frames are located where it asks
 ![image](https://user-images.githubusercontent.com/41763143/158256000-5ddaef25-eb0d-4a71-bcb8-b93418df21a5.png)
 4. Set `Framerate` to the framerate of the clip used, usuallyy this would be 25, 30 or 60.
 5. Keep `Same size as originals` enabled
