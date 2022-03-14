@@ -17,7 +17,7 @@ to the resolution of the clip.
 4. Run the program
 
 ### Generate a video
-After the video has rendered, all frames should ne located in `output/frames`.
+After the video has rendered, all frames should ne located in `output/out`.
 1. Open the built-in processing's movie maker, by going to `Tools > Movie Maker`.
 3. Select the ouput folder where the frames are located where it asks
 ![image](https://user-images.githubusercontent.com/41763143/158256000-5ddaef25-eb0d-4a71-bcb8-b93418df21a5.png)
