@@ -1,4 +1,6 @@
 # AsciiMovie
+This program isn't very optimised, as it has been a quick project used for a music video (link coming soon). By default the program is limited to 6 fps this can be manually changed by changning `RECORDING_FPS` value, You may increase it if you increase `SCALE` and depending on the video resolution.
+
 ## Getting Started
 1. Download processing here: https://processing.org/download
 2. Download and extract this repository where ever you want it.
